@@ -24,9 +24,11 @@ from .development import *
 
 #DEBUG = False
 
-#ADMINS = (
-#    ("Admin", "example@example.com"),
-#)
+ADMINS = (
+   ("Admin", "thiago.zilli@vetorfy.com"),
+   ("Admin", "vinicius.vasconcelos@vetorfy.com"),
+   ("Admin", "rodrigo.carelli@vetorfy.com"),
+)
 
 DATABASES = {
     "default": {
@@ -40,8 +42,8 @@ DATABASES = {
 
 SITES = {
     "api": {
-       "scheme": "http",
-       "domain": "localhost:8000",
+       "scheme": "https",
+       "domain": "taiga.vetorfy.com",
        "name": "api"
     },
     "front": {
@@ -52,6 +54,9 @@ SITES = {
 }
 
 #SITE_ID = "api"
+
+MEDIA_URL = "https://taiga.vetorfy.com/media/"
+STATIC_URL = "https://taiga.vetorfy.com/static/"
 
 #MEDIA_ROOT = '/home/taiga/media'
 #STATIC_ROOT = '/home/taiga/static'
@@ -85,16 +90,16 @@ SITES = {
 ## MAIL SYSTEM SETTINGS
 #########################################
 
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
+#DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 #CHANGE_NOTIFICATIONS_MIN_INTERVAL = 300 #seconds
 
 # EMAIL SETTINGS EXAMPLE
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = os.getenv("EMAIL_HOST")
-EMAIL_PORT = os.getenv("EMAIL_PORT")
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = os.getenv("EMAIL_HOST")
+#EMAIL_PORT = os.getenv("EMAIL_PORT")
+#EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+#EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 # GMAIL SETTINGS EXAMPLE
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -109,11 +114,11 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 ## REGISTRATION
 #########################################
 
-#PUBLIC_REGISTER_ENABLED = True
+PUBLIC_REGISTER_ENABLED = True
 
 # LIMIT ALLOWED DOMAINS FOR REGISTER AND INVITE
 # None or [] values in USER_EMAIL_ALLOWED_DOMAINS means allow any domain
-#USER_EMAIL_ALLOWED_DOMAINS = None
+USER_EMAIL_ALLOWED_DOMAINS = ['vetorfy.com']
 
 # PUCLIC OR PRIVATE NUMBER OF PROJECT PER USER
 #MAX_PRIVATE_PROJECTS_PER_USER = None # None == no limit
