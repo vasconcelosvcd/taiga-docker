@@ -1,12 +1,12 @@
 #! /usr/bin/env bash
 
 
-# if [[ -d taiga-back ]]; then
-#     rm -rf taiga-back
-# fi
+if [[ -d taiga-back ]]; then
+    rm -rf taiga-back
+fi
 
-# git clone -b stable --single-branch https://github.com/taigaio/taiga-back.git
-#git clone https://github.com/taigaio/taiga-back.git
+git clone -b stable --single-branch https://github.com/taigaio/taiga-back.git
+# git clone https://github.com/taigaio/taiga-back.git
 
 if [[ $OSTYPE != darwin* ]]; then
     sed -i 's/^enum34/#enum34/' taiga-back/requirements.txt
